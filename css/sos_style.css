@@ -1,0 +1,14 @@
+/*
+ *
+ */
+
+.soslider_class {
+	background: none repeat scroll 0 0 #FFFFFF;
+	/*padding: 9px 0 0 5px;*/
+	position: fixed;
+	text-align: center;
+}
+
+.fb-like-box {
+    overflow: hidden;
+}
