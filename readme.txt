@@ -15,7 +15,7 @@ SoSoft Slider for Facebook and extended version with Dailymotion, Flickr, Google
 
 = SoSlider Social Slider Lite =
 
-SoSlider Social Slider Lite
+SoSlider Social Slider Lite ([http://soslider.com](http://soslider.com))
 
 
 == Installation ==
