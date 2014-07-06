@@ -5,7 +5,7 @@
   Plugin URI: http://soslider.com
   Description: Slider for Dailymotion, Facebook, Flickr, GooglePlus, Instagram, LinkedIn, Pinterest, Twitter, Vimeo, YouTube, SoundCloud or for your very custom slider.
   Author: SoSoft
-  Version: 1.2.4
+  Version: 1.2.5
   Author URI: http://soslider.com
  */
 
@@ -52,7 +52,7 @@ function __soslider_init() {
 	}
 
 	if ( $act ) {
-		add_action( 'wp_footer', '__soslider_wp_footer' );
+		add_action( 'wp_footer', '__soslider_wp_footer', PHP_INT_MAX );
 		add_action( 'wp_print_styles', '__soslider_buld_css' );
 	}
 	register_deactivation_hook( __FILE__, '__gxlider_deactivation_hook' );

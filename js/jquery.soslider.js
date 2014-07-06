@@ -1,4 +1,4 @@
-(function($) {
+;(function($) {
 
     // Plugin definition.
     $.fn.soslider = function(options) {

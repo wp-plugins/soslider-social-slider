@@ -4,7 +4,7 @@ Donate link: http://soslider.com
 Tags: pinterest, custom slider, dailymotion, facebook, flickr, googleplus, instagram, likebox, linkedin, pop out slider, social slider, soundcloud, twitter, vimeo, youtube, facebook free plugin, facebook likebox, facebook multilingual plugin, facebook plugin, facebook slider, facebook social slider, facebook widget
 Requires at least: 3.6
 Tested up to: 3.9.1
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2
 
 SoSoft Slider for Facebook and extended version with 11 other social networks + your own custom slider.
