@@ -32,7 +32,7 @@ require_once 'class/SOOptionBase.php';
 function __soslider_init() {
 	add_action( 'admin_menu', '__soslider_admin_menu' );
 	add_action( 'admin_init', '__soslider_admin_init' );
-	add_action( 'init', '__soslider_fp_init' );
+	add_action( 'wp_enqueue_scripts', '__soslider_fp_init', 10000 );
 
 	$opt = new SOOption();
 	$opt->name = 'soslider_sliders_active';
@@ -159,7 +159,7 @@ function __soslider_fp_init() {
 		wp_enqueue_script( 'jquery' );
 		wp_register_script(
 			'jquery-soslider',
-			SOSLIDER_PLUGIN_URL . 'js/jquery.soslider.min.js'
+			SOSLIDER_PLUGIN_URL . 'js/jquery.soslider.min.js', array( 'jquery' ), null, true
 		);
 		wp_enqueue_script( 'jquery-soslider' );
 		wp_register_style( 'sos-style', SOSLIDER_PLUGIN_URL . 'css/sos_style.min.css' );
