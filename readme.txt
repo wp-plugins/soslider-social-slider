@@ -1,4 +1,4 @@
-=== SoSlider Social Slider ===
+=== SoSlider - Facebook - Social Slider ===
 Contributors: KAPlugins
 Donate link: http://soslider.com
 Tags: pinterest, custom slider, dailymotion, facebook, flickr, googleplus, instagram, likebox, linkedin, pop out slider, social slider, soundcloud, twitter, vimeo, youtube, facebook free plugin, facebook likebox, facebook multilingual plugin, facebook plugin, facebook slider, facebook social slider, facebook widget
