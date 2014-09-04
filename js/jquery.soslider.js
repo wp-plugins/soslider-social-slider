@@ -33,7 +33,8 @@
             load_method: "page_load" /* slide or page_load */,
             run_event: "mouseover",
             overflow: "hidden",
-            off: 0
+            off: 0,
+            gpcheck: false,
         };
 
         var opts = $.extend({}, defaults, options);
@@ -214,10 +215,18 @@
                     opts.expanded = !opts.expanded;
                 }
             },
-            mouseleave: function(obje) {
+            mouseleave: function(obje, ev) {
                 if (!opts.dock) {
                     if (opts.debug) {
                         debug(obje, "mouseleave ");
+                    }
+                    if (
+                            opts.gpcheck &&
+                            undefined !== ev.target.title &&
+                            undefined !== ev.target.src &&
+                            ev.target.src.indexOf("apis.google.com") > 0
+                    ) {
+                        return;
                     }
                     opts.slide_speed = parseInt(opts.slide_speed);
                     switch (opts.orientation) {
@@ -263,8 +272,8 @@
             if (opts.run_event == 'mouseover') {
                 $(this).bind("mouseenter", function() {
                     eventHandlers.mouseenter(this);
-                }).bind("mouseleave", function() {
-                    eventHandlers.mouseleave(this);
+                }).bind("mouseleave", function(e) {
+                    eventHandlers.mouseleave(this, e);
                 });
             } else {
                 var o = this;

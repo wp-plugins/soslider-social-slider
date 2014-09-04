@@ -155,18 +155,29 @@ class SOSliderFacebook extends SOAbstractHandler {
         $nb->title = __('Language', 'soslider');
         $nb->type = SOOption::SELECT;
         $nb->value = (WPLANG != '') ? WPLANG : "en_US";
-        $nb->choices = array();
-		$xml_data = wp_remote_get(
-			'http://www.facebook.com/translations/FacebookLocales.xml'
-		);
-        $xml      = simplexml_load_string( $xml_data['body'] );
-        $langs = array();
-        foreach ($xml->locale as $element) {
-            $name = (string) $element->englishName;
-            $code = (string) $element->codes->code->standard->representation;
-            $nb->choices[] = array($code, $name);
+        $nb->choices = array(
+            array(
+                'en_US',
+                'English (US)',
+            )
+        );
+        $body = get_transient( 'soslider_cache_fb_langs' );
+        if ( false === $body ) {
+            $body = wp_remote_get(
+                'http://www.facebook.com/translations/FacebookLocales.xml'
+            );
         }
-
+        if ( ! is_wp_error( $body ) ) {
+            $body        = is_array( $body ) ? $body['body'] : $body;
+            $nb->choices = array();
+            $xml         = simplexml_load_string( $body );
+            foreach ($xml->locale as $element) {
+                $name = (string) $element->englishName;
+                $code = (string) $element->codes->code->standard->representation;
+                $nb->choices[] = array($code, $name);
+            }
+            set_transient( 'soslider_cache_fb_langs', $body, 12 * HOUR_IN_SECONDS );
+        }
 
         $bo[6][] = $nb;
 
