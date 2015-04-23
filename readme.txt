@@ -3,7 +3,7 @@ Contributors: KAPlugins
 Donate link: http://soslider.com
 Tags: pinterest, custom slider, dailymotion, facebook, flickr, googleplus, instagram, likebox, linkedin, pop out slider, social slider, soundcloud, twitter, vimeo, youtube, facebook free plugin, facebook likebox, facebook multilingual plugin, facebook plugin, facebook slider, facebook social slider, facebook widget
 Requires at least: 3.6
-Tested up to: 4.0
+Tested up to: 4.2
 Stable tag: 1.2.9
 License: GPLv2
 
